@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Properties>
-        <Property name="basePath">target/logs</Property>
+        <Property name="basePath">target/logger</Property>
     </Properties>
     <!--    Appenders : where to show the logs. console, file, ... -->
     <Appenders>
         <!--        formatting fileName for dynamic name generation-->
         <RollingFile name="file"
-                     filePattern="${basePath}/TechProEd-%d{HH-mm-ss-SSS}.log">
+                     filePattern="${basePath}/AutoComplete-%d{HH-mm-ss-SSS}.log">
             <PatternLayout>
                 <pattern>%d %p %c{1.} [%t] %m%n</pattern>
             </PatternLayout>
@@ -22,18 +22,14 @@
     <!--    Loggers : logs the information. Logger is used to override Root level
     additivity="false" avoids duplicated messages that can come from parent levels. This should be used with Logger-->
     <Loggers>
-        <Logger name="com.myfirstproject.tests" level="trace" additivity="false">,
+        <Logger name="com.myfirstproject.day11" level="trace" additivity="false">,
             <AppenderRef ref="Console"/>
             <AppenderRef ref="file"/>
         </Logger>
-        <Logger name="com.myfirstproject.Day11" level="trace" additivity="true">
+        <Logger name="com.myfirstproject.day11.Day11_AutoComplete" level="trace" additivity="false">,
             <AppenderRef ref="Console"/>
             <AppenderRef ref="file"/>
         </Logger>
-
-
-
-
         <!--      Root : provides level to ALL classes on the project
         By default level = error prints errors and fatal
         level=trace will logs everything-->
